@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "e854d1dc-333a-4aed-9044-4c77ffb79d10",
+		"name": "advokat-apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Olim\",\n\t\"surname\": \"Olimov\",\n\t\"phone_number\": \"+998994569879\",\n\t\"password\": \"123456\",\n\t\"role\": \"lawyer\",\n\t\"experience\": 5\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"phone_number\": \"+998994569878\",\n\t\"password\": \"123456\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "question create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "41gUv5dptD5KpZ7nQxgK72",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"question\" : \"What is that?\",\n\t\"type\": \"public\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/question/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"question",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "question search",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "41gUv5dptD5KpZ7nQxgK72"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"question\" : \"What is that?\",\n\t\"type\": \"public\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/question/search/all",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"question",
+						"search",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "answer create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Ts37dqZpGSHgXkz9TB9n7c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"question_id\": \"5e2e84660200b41a244a3bf7\",\n\t\"answer\": \"I do not know also!\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/answer/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"answer",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "answer search",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Ts37dqZpGSHgXkz9TB9n7c"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"question_id\": \"5e2e84660200b41a244a3bf7\",\n\t\"answer\": \"I do not know also!\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/answer/search",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"answer",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "leave comment and rank",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Ts37dqZpGSHgXkz9TB9n7c"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"leaving_id\": \"5e2e95603a016d1b689265dc\",\n\t\"comment\": \"Good job!\",\n\t\"rank\": 4\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/comment/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comment",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
